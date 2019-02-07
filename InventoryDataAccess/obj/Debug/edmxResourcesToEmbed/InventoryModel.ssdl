@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InventoryDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="IN_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="IN_Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barcode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="Category" Type="nvarchar(max)" />
+    <Property Name="Price" Type="int" />
+    <Property Name="UnitType" Type="nvarchar" MaxLength="50" />
+    <Property Name="MinValue" Type="int" />
+    <Property Name="MaxValue" Type="int" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Vender" Type="nvarchar(max)" />
+    <Property Name="ProductStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImgProduct" Type="nvarchar(max)" />
+    <Property Name="SITES" Type="nvarchar(max)" />
+    <Property Name="Place" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="IN_ProductRequis">
+    <Key>
+      <PropertyRef Name="RequisID" />
+    </Key>
+    <Property Name="RequisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Barcode" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="nvarchar(max)" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="Category" Type="nvarchar(max)" />
+    <Property Name="Price" Type="int" />
+    <Property Name="UnitType" Type="nvarchar(max)" />
+    <Property Name="ImgProduct" Type="nvarchar(max)" />
+    <Property Name="Balance" Type="int" />
+    <Property Name="RequisAmount" Type="int" />
+    <Property Name="RequisNote" Type="nvarchar(max)" />
+    <Property Name="Location" Type="nvarchar(max)" />
+    <Property Name="RequisStatus" Type="nvarchar(max)" />
+    <Property Name="RequisNumber" Type="nvarchar(max)" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="IN_StockCard">
+    <Key>
+      <PropertyRef Name="StockCardID" />
+    </Key>
+    <Property Name="StockCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="UserID" Type="nvarchar(max)" />
+    <Property Name="StockCardCategory" Type="nvarchar(max)" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Balance" Type="int" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="Price" Type="int" />
+    <Property Name="UnitType" Type="nvarchar(max)" />
+    <Property Name="Category" Type="nvarchar(max)" />
+    <Property Name="SITES" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="IN_UnitType">
+    <Key>
+      <PropertyRef Name="UnitTypeID" />
+    </Key>
+    <Property Name="UnitTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitTypeName" Type="nvarchar(max)" />
+    <Property Name="UnitValue" Type="int" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="ESSUSR_Name" />
+    </Key>
+    <Property Name="ESSUSR_Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ESSURS_Password" Type="nvarchar" MaxLength="10" />
+    <Property Name="EMP_EngName" Type="nvarchar(max)" />
+    <Property Name="EMP_Email" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="ESSUSR_Name" />
+    </Key>
+    <Property Name="ESSUSR_Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="EMP_EngName" Type="nvarchar(max)" />
+    <Property Name="EMP_Email" Type="nvarchar(max)" />
+    <Property Name="Location" Type="nvarchar(max)" />
+    <Property Name="Position" Type="nvarchar(max)" />
+    <Property Name="SITES" Type="nvarchar(max)" />
+    <Property Name="Status" Type="nvarchar(max)" />
+    <Property Name="Permission" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="InventoryDBModelStoreContainer">
+    <EntitySet Name="IN_Category" EntityType="Self.IN_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IN_Product" EntityType="Self.IN_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IN_ProductRequis" EntityType="Self.IN_ProductRequis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IN_StockCard" EntityType="Self.IN_StockCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IN_UnitType" EntityType="Self.IN_UnitType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPermission" EntityType="Self.UserPermission" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InventoryDBModelStoreContainer" CdmEntityContainer="InventoryDBEntities">
+    <EntitySetMapping Name="IN_Category">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_Category">
+        <MappingFragment StoreEntitySet="IN_Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_Product">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_Product">
+        <MappingFragment StoreEntitySet="IN_Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+          <ScalarProperty Name="MinValue" ColumnName="MinValue" />
+          <ScalarProperty Name="MaxValue" ColumnName="MaxValue" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Vender" ColumnName="Vender" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ImgProduct" ColumnName="ImgProduct" />
+          <ScalarProperty Name="SITES" ColumnName="SITES" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_UnitType">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_UnitType">
+        <MappingFragment StoreEntitySet="IN_UnitType">
+          <ScalarProperty Name="UnitTypeID" ColumnName="UnitTypeID" />
+          <ScalarProperty Name="UnitTypeName" ColumnName="UnitTypeName" />
+          <ScalarProperty Name="UnitValue" ColumnName="UnitValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLogins">
+      <EntityTypeMapping TypeName="InventoryDBModel.UserLogin">
+        <MappingFragment StoreEntitySet="UserLogin">
+          <ScalarProperty Name="ESSUSR_Name" ColumnName="ESSUSR_Name" />
+          <ScalarProperty Name="ESSURS_Password" ColumnName="ESSURS_Password" />
+          <ScalarProperty Name="EMP_EngName" ColumnName="EMP_EngName" />
+          <ScalarProperty Name="EMP_Email" ColumnName="EMP_Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPermissions">
+      <EntityTypeMapping TypeName="InventoryDBModel.UserPermission">
+        <MappingFragment StoreEntitySet="UserPermission">
+          <ScalarProperty Name="ESSUSR_Name" ColumnName="ESSUSR_Name" />
+          <ScalarProperty Name="EMP_EngName" ColumnName="EMP_EngName" />
+          <ScalarProperty Name="EMP_Email" ColumnName="EMP_Email" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="SITES" ColumnName="SITES" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_StockCard">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_StockCard">
+        <MappingFragment StoreEntitySet="IN_StockCard">
+          <ScalarProperty Name="SITES" ColumnName="SITES" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="StockCardCategory" ColumnName="StockCardCategory" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="StockCardID" ColumnName="StockCardID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_ProductRequis">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_ProductRequis">
+        <MappingFragment StoreEntitySet="IN_ProductRequis">
+          <ScalarProperty Name="RequisNumber" ColumnName="RequisNumber" />
+          <ScalarProperty Name="RequisStatus" ColumnName="RequisStatus" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ImgProduct" ColumnName="ImgProduct" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="RequisNote" ColumnName="RequisNote" />
+          <ScalarProperty Name="RequisAmount" ColumnName="RequisAmount" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="RequisID" ColumnName="RequisID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
