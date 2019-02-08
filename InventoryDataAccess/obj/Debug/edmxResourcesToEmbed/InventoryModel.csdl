@@ -64,6 +64,8 @@
     <EntitySet Name="UserPermissions" EntityType="Self.UserPermission" />
     <EntitySet Name="IN_StockCard" EntityType="InventoryDBModel.IN_StockCard" />
     <EntitySet Name="IN_ProductRequis" EntityType="InventoryDBModel.IN_ProductRequis" />
+    <EntitySet Name="IN_Location" EntityType="InventoryDBModel.IN_Location" />
+    <EntitySet Name="IN_Sites" EntityType="InventoryDBModel.IN_Sites" />
   </EntityContainer>
   <EntityType Name="IN_StockCard">
     <Key>
@@ -102,5 +104,25 @@
     <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="RequisStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="RequisNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_EngName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IN_Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImgLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SITESID" Type="Int32" />
+    <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IN_Sites">
+    <Key>
+      <PropertyRef Name="SITESID" />
+    </Key>
+    <Property Name="SITESID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImgSITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

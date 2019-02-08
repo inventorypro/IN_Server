@@ -222,8 +222,10 @@
     <Compile Include="Controllers\fileuploadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IN_CategoryController.cs" />
+    <Compile Include="Controllers\IN_LocationController.cs" />
     <Compile Include="Controllers\IN_ProductController.cs" />
     <Compile Include="Controllers\IN_ProductRequisController.cs" />
+    <Compile Include="Controllers\IN_SitesController.cs" />
     <Compile Include="Controllers\IN_StockCardController.cs" />
     <Compile Include="Controllers\IN_UnitTypeController.cs" />
     <Compile Include="Controllers\UserPermissionController.cs" />

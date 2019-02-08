@@ -32,5 +32,7 @@ namespace InventoryDataAccess
         public virtual DbSet<UserPermission> UserPermissions { get; set; }
         public virtual DbSet<IN_StockCard> IN_StockCard { get; set; }
         public virtual DbSet<IN_ProductRequis> IN_ProductRequis { get; set; }
+        public virtual DbSet<IN_Location> IN_Location { get; set; }
+        public virtual DbSet<IN_Sites> IN_Sites { get; set; }
     }
 }

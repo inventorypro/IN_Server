@@ -26,17 +26,28 @@ namespace InventoryServiceV1.Controllers
         // {
         //    return db.IN_ProductRequis;
         //  }
-    /*    [BasicAuthentication]
-        public HttpResponseMessage GetIN_Product(string userID = "All")
-        {
-            string getUserID = userID.ToLower();
-            var checkUserID = db.IN_ProductRequis.Where(e => e.UserID.ToLower() == getUserID).ToList();
-            if (!CheckPermission())
+        /*    [BasicAuthentication]
+            public HttpResponseMessage GetIN_Product(string userID = "All")
             {
-                if (userID.ToLower() == "all")
+                string getUserID = userID.ToLower();
+                var checkUserID = db.IN_ProductRequis.Where(e => e.UserID.ToLower() == getUserID).ToList();
+                if (!CheckPermission())
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK,
-                           db.IN_ProductRequis.ToList());
+                    if (userID.ToLower() == "all")
+                    {
+                        return Request.CreateResponse(HttpStatusCode.OK,
+                               db.IN_ProductRequis.ToList());
+                    }
+                    else if (checkUserID.Count() != 0)
+                    {
+                        return Request.CreateResponse(HttpStatusCode.OK,
+                              db.IN_ProductRequis.Where(e => e.UserID.ToLower() == getUserID).ToList());
+                    }
+                    else
+                    {
+                        return Request.CreateErrorResponse(HttpStatusCode.BadRequest,
+                              "Value for your sites is invalid.");
+                    }
                 }
                 else if (checkUserID.Count() != 0)
                 {
@@ -48,21 +59,10 @@ namespace InventoryServiceV1.Controllers
                     return Request.CreateErrorResponse(HttpStatusCode.BadRequest,
                           "Value for your sites is invalid.");
                 }
-            }
-            else if (checkUserID.Count() != 0)
-            {
-                return Request.CreateResponse(HttpStatusCode.OK,
-                      db.IN_ProductRequis.Where(e => e.UserID.ToLower() == getUserID).ToList());
-            }
-            else
-            {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest,
-                      "Value for your sites is invalid.");
+                       "Value for your sites is invalid.");
             }
-            return Request.CreateErrorResponse(HttpStatusCode.BadRequest,
-                   "Value for your sites is invalid.");
-        }
-        */
+            */
         [BasicAuthentication]
         public HttpResponseMessage GetIN_Product(string userID = "All", string RequisStatus = "All")
         {
@@ -95,11 +95,12 @@ namespace InventoryServiceV1.Controllers
                     return Request.CreateResponse(HttpStatusCode.OK,
                     db.IN_ProductRequis.Where(e => e.UserID.ToLower() == getUserID && e.RequisStatus.ToLower() == getRequisStatus).ToList());
                 }
-                else {
+                else
+                {
                     return Request.CreateErrorResponse(HttpStatusCode.BadRequest,
               "Value for your sites is invalid.");
                 }
-              
+
             }
             else
             {
@@ -118,7 +119,7 @@ namespace InventoryServiceV1.Controllers
             string username = Thread.CurrentPrincipal.Identity.Name;
             string getUsername = username.ToLower();
             var checkAdmin = db.IN_ProductRequis.Where(e => e.UserID.ToLower() == getUsername && e.RequisID == id).ToList();
- 
+
             if (!CheckPermission())
             {
                 IN_ProductRequis iN_ProductRequis = db.IN_ProductRequis.Find(id);
@@ -129,11 +130,12 @@ namespace InventoryServiceV1.Controllers
 
                 return Ok(iN_ProductRequis);
             }
-            else {
+            else
+            {
 
                 if (checkAdmin.Count() != 0)
                 {
-              
+
                     IN_ProductRequis iN_ProductRequis = db.IN_ProductRequis.Find(id);
                     if (iN_ProductRequis == null)
                     {

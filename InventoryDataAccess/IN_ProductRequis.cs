@@ -30,5 +30,7 @@ namespace InventoryDataAccess
         public string Location { get; set; }
         public string RequisStatus { get; set; }
         public string RequisNumber { get; set; }
+        public string EMP_EngName { get; set; }
+        public string Position { get; set; }
     }
 }

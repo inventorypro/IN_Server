@@ -89,14 +89,11 @@ namespace InventoryServiceV1.Controllers
                 return NotFound();
             }
 
-            if (!CheckPermission())
-            {
+
                 return Ok(iN_Product);
-            }
-            else
-            {
-                return NotFound();
-            }
+        
+   
+            
             
         }
 

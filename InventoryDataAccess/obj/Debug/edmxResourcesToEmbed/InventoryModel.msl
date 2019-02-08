@@ -83,6 +83,8 @@
     <EntitySetMapping Name="IN_ProductRequis">
       <EntityTypeMapping TypeName="InventoryDBModel.IN_ProductRequis">
         <MappingFragment StoreEntitySet="IN_ProductRequis">
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="EMP_EngName" ColumnName="EMP_EngName" />
           <ScalarProperty Name="RequisNumber" ColumnName="RequisNumber" />
           <ScalarProperty Name="RequisStatus" ColumnName="RequisStatus" />
           <ScalarProperty Name="Location" ColumnName="Location" />
@@ -99,6 +101,26 @@
           <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="RequisID" ColumnName="RequisID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_Location">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_Location">
+        <MappingFragment StoreEntitySet="IN_Location">
+          <ScalarProperty Name="SITES" ColumnName="SITES" />
+          <ScalarProperty Name="SITESID" ColumnName="SITESID" />
+          <ScalarProperty Name="ImgLocation" ColumnName="ImgLocation" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_Sites">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_Sites">
+        <MappingFragment StoreEntitySet="IN_Sites">
+          <ScalarProperty Name="ImgSITES" ColumnName="ImgSITES" />
+          <ScalarProperty Name="SITES" ColumnName="SITES" />
+          <ScalarProperty Name="SITESID" ColumnName="SITESID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
