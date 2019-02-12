@@ -28,5 +28,6 @@ namespace InventoryDataAccess
         public Nullable<int> TotalCost { get; set; }
         public string UserID { get; set; }
         public string SITES { get; set; }
+        public string RequisStatus { get; set; }
     }
 }

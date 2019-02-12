@@ -145,5 +145,6 @@
     <Property Name="TotalCost" Type="Int32" />
     <Property Name="UserID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequisStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

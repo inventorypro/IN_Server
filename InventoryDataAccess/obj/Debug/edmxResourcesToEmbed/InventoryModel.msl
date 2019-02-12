@@ -128,6 +128,7 @@
     <EntitySetMapping Name="IN_Requisition">
       <EntityTypeMapping TypeName="InventoryDBModel.IN_Requisition">
         <MappingFragment StoreEntitySet="IN_Requisition">
+          <ScalarProperty Name="RequisStatus" ColumnName="RequisStatus" />
           <ScalarProperty Name="SITES" ColumnName="SITES" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />

@@ -76,6 +76,7 @@
           <Property Name="RequisLocation" Type="nvarchar(max)" />
           <Property Name="RequisNote" Type="nvarchar(max)" />
           <Property Name="RequisDate" Type="datetime" />
+          <Property Name="RequisStatus" Type="nvarchar(max)" />
           <Property Name="ApproveID" Type="nvarchar(max)" />
           <Property Name="ApproveName" Type="nvarchar(max)" />
           <Property Name="ApproveDate" Type="datetime" />
@@ -300,6 +301,7 @@
           <Property Name="TotalCost" Type="Int32" />
           <Property Name="UserID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RequisStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -434,6 +436,7 @@
           <EntitySetMapping Name="IN_Requisition">
             <EntityTypeMapping TypeName="InventoryDBModel.IN_Requisition">
               <MappingFragment StoreEntitySet="IN_Requisition">
+                <ScalarProperty Name="RequisStatus" ColumnName="RequisStatus" />
                 <ScalarProperty Name="SITES" ColumnName="SITES" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />

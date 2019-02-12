@@ -71,6 +71,7 @@
     <Property Name="RequisLocation" Type="nvarchar(max)" />
     <Property Name="RequisNote" Type="nvarchar(max)" />
     <Property Name="RequisDate" Type="datetime" />
+    <Property Name="RequisStatus" Type="nvarchar(max)" />
     <Property Name="ApproveID" Type="nvarchar(max)" />
     <Property Name="ApproveName" Type="nvarchar(max)" />
     <Property Name="ApproveDate" Type="datetime" />
