@@ -51,6 +51,7 @@
     <EntitySetMapping Name="UserPermissions">
       <EntityTypeMapping TypeName="InventoryDBModel.UserPermission">
         <MappingFragment StoreEntitySet="UserPermission">
+          <ScalarProperty Name="Department" ColumnName="Department" />
           <ScalarProperty Name="ESSUSR_Name" ColumnName="ESSUSR_Name" />
           <ScalarProperty Name="EMP_EngName" ColumnName="EMP_EngName" />
           <ScalarProperty Name="EMP_Email" ColumnName="EMP_Email" />
@@ -121,6 +122,26 @@
           <ScalarProperty Name="ImgSITES" ColumnName="ImgSITES" />
           <ScalarProperty Name="SITES" ColumnName="SITES" />
           <ScalarProperty Name="SITESID" ColumnName="SITESID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_Requisition">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_Requisition">
+        <MappingFragment StoreEntitySet="IN_Requisition">
+          <ScalarProperty Name="SITES" ColumnName="SITES" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="RequisNumber" ColumnName="RequisNumber" />
+          <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+          <ScalarProperty Name="ApproveName" ColumnName="ApproveName" />
+          <ScalarProperty Name="ApproveID" ColumnName="ApproveID" />
+          <ScalarProperty Name="RequisDate" ColumnName="RequisDate" />
+          <ScalarProperty Name="RequisNote" ColumnName="RequisNote" />
+          <ScalarProperty Name="RequisLocation" ColumnName="RequisLocation" />
+          <ScalarProperty Name="RequisDept" ColumnName="RequisDept" />
+          <ScalarProperty Name="RequisPosition" ColumnName="RequisPosition" />
+          <ScalarProperty Name="RequisName" ColumnName="RequisName" />
+          <ScalarProperty Name="RequisID" ColumnName="RequisID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

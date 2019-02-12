@@ -34,5 +34,6 @@ namespace InventoryDataAccess
         public virtual DbSet<IN_ProductRequis> IN_ProductRequis { get; set; }
         public virtual DbSet<IN_Location> IN_Location { get; set; }
         public virtual DbSet<IN_Sites> IN_Sites { get; set; }
+        public virtual DbSet<IN_Requisition> IN_Requisition { get; set; }
     }
 }

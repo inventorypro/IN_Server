@@ -64,6 +64,25 @@
           <Property Name="RequisNumber" Type="nvarchar(max)" />
           <Property Name="Date" Type="datetime" />
         </EntityType>
+        <EntityType Name="IN_Requisition">
+          <Key>
+            <PropertyRef Name="RequisID" />
+          </Key>
+          <Property Name="RequisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar(max)" />
+          <Property Name="RequisName" Type="nvarchar(max)" />
+          <Property Name="RequisPosition" Type="nvarchar(max)" />
+          <Property Name="RequisDept" Type="nvarchar(max)" />
+          <Property Name="RequisLocation" Type="nvarchar(max)" />
+          <Property Name="RequisNote" Type="nvarchar(max)" />
+          <Property Name="RequisDate" Type="datetime" />
+          <Property Name="ApproveID" Type="nvarchar(max)" />
+          <Property Name="ApproveName" Type="nvarchar(max)" />
+          <Property Name="ApproveDate" Type="datetime" />
+          <Property Name="RequisNumber" Type="nvarchar(max)" />
+          <Property Name="TotalCost" Type="int" />
+          <Property Name="SITES" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="IN_Sites">
           <Key>
             <PropertyRef Name="SITESID" />
@@ -118,12 +137,14 @@
           <Property Name="SITES" Type="nvarchar(max)" />
           <Property Name="Status" Type="nvarchar(max)" />
           <Property Name="Permission" Type="nvarchar(max)" />
+          <Property Name="Department" Type="nvarchar(max)" />
         </EntityType>
         <EntityContainer Name="InventoryDBModelStoreContainer">
           <EntitySet Name="IN_Category" EntityType="Self.IN_Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Location" EntityType="Self.IN_Location" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Product" EntityType="Self.IN_Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_ProductRequis" EntityType="Self.IN_ProductRequis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IN_Requisition" EntityType="Self.IN_Requisition" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Sites" EntityType="Self.IN_Sites" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_StockCard" EntityType="Self.IN_StockCard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_UnitType" EntityType="Self.IN_UnitType" Schema="dbo" store:Type="Tables" />
@@ -189,6 +210,7 @@
           <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Permission" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="InventoryDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="IN_Category" EntityType="Self.IN_Category" />
@@ -200,6 +222,7 @@
           <EntitySet Name="IN_ProductRequis" EntityType="InventoryDBModel.IN_ProductRequis" />
           <EntitySet Name="IN_Location" EntityType="InventoryDBModel.IN_Location" />
           <EntitySet Name="IN_Sites" EntityType="InventoryDBModel.IN_Sites" />
+          <EntitySet Name="IN_Requisition" EntityType="InventoryDBModel.IN_Requisition" />
         </EntityContainer>
         <EntityType Name="IN_StockCard">
           <Key>
@@ -259,6 +282,25 @@
           <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ImgSITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="IN_Requisition">
+          <Key>
+            <PropertyRef Name="RequisID" />
+          </Key>
+          <Property Name="RequisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RequisName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RequisPosition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RequisDept" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RequisLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RequisNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RequisDate" Type="DateTime" Precision="3" />
+          <Property Name="ApproveID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApproveName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApproveDate" Type="DateTime" Precision="3" />
+          <Property Name="RequisNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalCost" Type="Int32" />
+          <Property Name="UserID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -315,6 +357,7 @@
           <EntitySetMapping Name="UserPermissions">
             <EntityTypeMapping TypeName="InventoryDBModel.UserPermission">
               <MappingFragment StoreEntitySet="UserPermission">
+                <ScalarProperty Name="Department" ColumnName="Department" />
                 <ScalarProperty Name="ESSUSR_Name" ColumnName="ESSUSR_Name" />
                 <ScalarProperty Name="EMP_EngName" ColumnName="EMP_EngName" />
                 <ScalarProperty Name="EMP_Email" ColumnName="EMP_Email" />
@@ -385,6 +428,26 @@
                 <ScalarProperty Name="ImgSITES" ColumnName="ImgSITES" />
                 <ScalarProperty Name="SITES" ColumnName="SITES" />
                 <ScalarProperty Name="SITESID" ColumnName="SITESID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IN_Requisition">
+            <EntityTypeMapping TypeName="InventoryDBModel.IN_Requisition">
+              <MappingFragment StoreEntitySet="IN_Requisition">
+                <ScalarProperty Name="SITES" ColumnName="SITES" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="RequisNumber" ColumnName="RequisNumber" />
+                <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+                <ScalarProperty Name="ApproveName" ColumnName="ApproveName" />
+                <ScalarProperty Name="ApproveID" ColumnName="ApproveID" />
+                <ScalarProperty Name="RequisDate" ColumnName="RequisDate" />
+                <ScalarProperty Name="RequisNote" ColumnName="RequisNote" />
+                <ScalarProperty Name="RequisLocation" ColumnName="RequisLocation" />
+                <ScalarProperty Name="RequisDept" ColumnName="RequisDept" />
+                <ScalarProperty Name="RequisPosition" ColumnName="RequisPosition" />
+                <ScalarProperty Name="RequisName" ColumnName="RequisName" />
+                <ScalarProperty Name="RequisID" ColumnName="RequisID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

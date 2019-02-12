@@ -55,6 +55,7 @@
     <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Permission" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityContainer Name="InventoryDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="IN_Category" EntityType="Self.IN_Category" />
@@ -66,6 +67,7 @@
     <EntitySet Name="IN_ProductRequis" EntityType="InventoryDBModel.IN_ProductRequis" />
     <EntitySet Name="IN_Location" EntityType="InventoryDBModel.IN_Location" />
     <EntitySet Name="IN_Sites" EntityType="InventoryDBModel.IN_Sites" />
+    <EntitySet Name="IN_Requisition" EntityType="InventoryDBModel.IN_Requisition" />
   </EntityContainer>
   <EntityType Name="IN_StockCard">
     <Key>
@@ -124,5 +126,24 @@
     <Property Name="SITESID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ImgSITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IN_Requisition">
+    <Key>
+      <PropertyRef Name="RequisID" />
+    </Key>
+    <Property Name="RequisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RequisName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequisPosition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequisDept" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequisLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequisNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequisDate" Type="DateTime" Precision="3" />
+    <Property Name="ApproveID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ApproveName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="3" />
+    <Property Name="RequisNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TotalCost" Type="Int32" />
+    <Property Name="UserID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

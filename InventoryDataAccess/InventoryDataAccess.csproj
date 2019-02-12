@@ -107,6 +107,9 @@
     <Compile Include="IN_ProductRequis.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="IN_Requisition.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="IN_Sites.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>

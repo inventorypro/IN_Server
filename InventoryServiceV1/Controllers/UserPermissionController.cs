@@ -171,6 +171,7 @@ namespace InventoryService.Controllers
                         entity.EMP_Email = userPermission.EMP_Email;
                         entity.Position = userPermission.Position;
                         entity.Location = userPermission.Location;
+                        entity.Department = userPermission.Department;
                         entity.SITES = userPermission.SITES;
 
                         entities.SaveChanges();
@@ -183,7 +184,7 @@ namespace InventoryService.Controllers
                         entity.EMP_EngName = userPermission.EMP_EngName;
                         entity.EMP_Email = userPermission.EMP_Email;
                         entity.Position = userPermission.Position;
-                        entity.Location = userPermission.Location;
+                        entity.Department = userPermission.Department;
                         entity.SITES = userPermission.SITES;
                         entity.Status = userPermission.Status;
                         entity.Permission = userPermission.Permission;

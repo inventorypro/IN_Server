@@ -14,6 +14,7 @@
         <EntityTypeShape EntityType="InventoryDBModel.IN_ProductRequis" Width="1.5" PointX="5.375" PointY="6.75" />
         <EntityTypeShape EntityType="InventoryDBModel.IN_Location" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="InventoryDBModel.IN_Sites" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="InventoryDBModel.IN_Requisition" Width="1.5" PointX="7.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

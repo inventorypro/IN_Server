@@ -22,5 +22,6 @@ namespace InventoryDataAccess
         public string SITES { get; set; }
         public string Status { get; set; }
         public string Permission { get; set; }
+        public string Department { get; set; }
     }
 }

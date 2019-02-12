@@ -59,6 +59,25 @@
     <Property Name="RequisNumber" Type="nvarchar(max)" />
     <Property Name="Date" Type="datetime" />
   </EntityType>
+  <EntityType Name="IN_Requisition">
+    <Key>
+      <PropertyRef Name="RequisID" />
+    </Key>
+    <Property Name="RequisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="nvarchar(max)" />
+    <Property Name="RequisName" Type="nvarchar(max)" />
+    <Property Name="RequisPosition" Type="nvarchar(max)" />
+    <Property Name="RequisDept" Type="nvarchar(max)" />
+    <Property Name="RequisLocation" Type="nvarchar(max)" />
+    <Property Name="RequisNote" Type="nvarchar(max)" />
+    <Property Name="RequisDate" Type="datetime" />
+    <Property Name="ApproveID" Type="nvarchar(max)" />
+    <Property Name="ApproveName" Type="nvarchar(max)" />
+    <Property Name="ApproveDate" Type="datetime" />
+    <Property Name="RequisNumber" Type="nvarchar(max)" />
+    <Property Name="TotalCost" Type="int" />
+    <Property Name="SITES" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="IN_Sites">
     <Key>
       <PropertyRef Name="SITESID" />
@@ -113,12 +132,14 @@
     <Property Name="SITES" Type="nvarchar(max)" />
     <Property Name="Status" Type="nvarchar(max)" />
     <Property Name="Permission" Type="nvarchar(max)" />
+    <Property Name="Department" Type="nvarchar(max)" />
   </EntityType>
   <EntityContainer Name="InventoryDBModelStoreContainer">
     <EntitySet Name="IN_Category" EntityType="Self.IN_Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_Location" EntityType="Self.IN_Location" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_Product" EntityType="Self.IN_Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_ProductRequis" EntityType="Self.IN_ProductRequis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IN_Requisition" EntityType="Self.IN_Requisition" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_Sites" EntityType="Self.IN_Sites" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_StockCard" EntityType="Self.IN_StockCard" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_UnitType" EntityType="Self.IN_UnitType" Schema="dbo" store:Type="Tables" />
