@@ -57,25 +57,27 @@ namespace InventoryServiceV1.Controllers
                    "Value for your sites is invalid.");
         }
 
+    
+
 
 
         // GET: api/IN_Product
-    /*    [BasicAuthentication]
-       public IQueryable<IN_Product> GetIN_Product()
-        {
-           var result = db.IN_Product;
-       
-            if (!CheckPermission())
+        /*    [BasicAuthentication]
+           public IQueryable<IN_Product> GetIN_Product()
             {
-                return result;
-            }
-            else {
-                return null;
-          }
-           
+               var result = db.IN_Product;
 
-          
-        }*/
+                if (!CheckPermission())
+                {
+                    return result;
+                }
+                else {
+                    return null;
+              }
+
+
+
+            }*/
 
         // GET: api/IN_Product/5
         [ResponseType(typeof(IN_Product))]

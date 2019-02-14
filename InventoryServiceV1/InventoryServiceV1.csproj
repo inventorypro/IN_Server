@@ -225,6 +225,7 @@
     <Compile Include="Controllers\IN_LocationController.cs" />
     <Compile Include="Controllers\IN_ProductController.cs" />
     <Compile Include="Controllers\IN_ProductRequisController.cs" />
+    <Compile Include="Controllers\IN_ProductViewBarcodeController.cs" />
     <Compile Include="Controllers\IN_RequisitionController.cs" />
     <Compile Include="Controllers\IN_SitesController.cs" />
     <Compile Include="Controllers\IN_StockCardController.cs" />
