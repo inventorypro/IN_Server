@@ -76,8 +76,7 @@ namespace InventoryServiceV1.Controllers
                 {
                     return Request.CreateResponse(HttpStatusCode.OK,
                            db.IN_ProductRequis.ToList());
-                }
-                else if (checkUserID.Count() != 0)
+                }else if (checkUserID.Count() != 0)
                 {
                     return Request.CreateResponse(HttpStatusCode.OK,
                           db.IN_ProductRequis.Where(e => e.UserID.ToLower() == getUserID && e.RequisStatus.ToLower() == getRequisStatus).ToList());

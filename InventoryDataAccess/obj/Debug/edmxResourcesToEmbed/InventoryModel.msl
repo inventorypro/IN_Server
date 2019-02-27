@@ -146,5 +146,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="IN_Package">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_Package">
+        <MappingFragment StoreEntitySet="IN_Package">
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="PackProductID" ColumnName="PackProductID" />
+          <ScalarProperty Name="SITES" ColumnName="SITES" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

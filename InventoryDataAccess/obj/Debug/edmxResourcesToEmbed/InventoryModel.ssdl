@@ -17,6 +17,17 @@
     <Property Name="SITESID" Type="int" />
     <Property Name="SITES" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="IN_Package">
+    <Key>
+      <PropertyRef Name="PackageID" />
+    </Key>
+    <Property Name="PackageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="PackProductID" Type="int" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="SITES" Type="nvarchar(max)" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="IN_Product">
     <Key>
       <PropertyRef Name="ProductID" />
@@ -138,6 +149,7 @@
   <EntityContainer Name="InventoryDBModelStoreContainer">
     <EntitySet Name="IN_Category" EntityType="Self.IN_Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_Location" EntityType="Self.IN_Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IN_Package" EntityType="Self.IN_Package" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_Product" EntityType="Self.IN_Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_ProductRequis" EntityType="Self.IN_ProductRequis" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_Requisition" EntityType="Self.IN_Requisition" Schema="dbo" store:Type="Tables" />

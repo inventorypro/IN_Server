@@ -22,6 +22,17 @@
           <Property Name="SITESID" Type="int" />
           <Property Name="SITES" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="IN_Package">
+          <Key>
+            <PropertyRef Name="PackageID" />
+          </Key>
+          <Property Name="PackageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="PackProductID" Type="int" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="SITES" Type="nvarchar(max)" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="IN_Product">
           <Key>
             <PropertyRef Name="ProductID" />
@@ -143,6 +154,7 @@
         <EntityContainer Name="InventoryDBModelStoreContainer">
           <EntitySet Name="IN_Category" EntityType="Self.IN_Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Location" EntityType="Self.IN_Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IN_Package" EntityType="Self.IN_Package" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Product" EntityType="Self.IN_Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_ProductRequis" EntityType="Self.IN_ProductRequis" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Requisition" EntityType="Self.IN_Requisition" Schema="dbo" store:Type="Tables" />
@@ -224,6 +236,7 @@
           <EntitySet Name="IN_Location" EntityType="InventoryDBModel.IN_Location" />
           <EntitySet Name="IN_Sites" EntityType="InventoryDBModel.IN_Sites" />
           <EntitySet Name="IN_Requisition" EntityType="InventoryDBModel.IN_Requisition" />
+          <EntitySet Name="IN_Package" EntityType="InventoryDBModel.IN_Package" />
         </EntityContainer>
         <EntityType Name="IN_StockCard">
           <Key>
@@ -302,6 +315,17 @@
           <Property Name="UserID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="RequisStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IN_Package">
+          <Key>
+            <PropertyRef Name="PackageID" />
+          </Key>
+          <Property Name="PackageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PackProductID" Type="Int32" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -451,6 +475,18 @@
                 <ScalarProperty Name="RequisPosition" ColumnName="RequisPosition" />
                 <ScalarProperty Name="RequisName" ColumnName="RequisName" />
                 <ScalarProperty Name="RequisID" ColumnName="RequisID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IN_Package">
+            <EntityTypeMapping TypeName="InventoryDBModel.IN_Package">
+              <MappingFragment StoreEntitySet="IN_Package">
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="PackProductID" ColumnName="PackProductID" />
+                <ScalarProperty Name="SITES" ColumnName="SITES" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="PackageID" ColumnName="PackageID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

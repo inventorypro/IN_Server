@@ -68,6 +68,7 @@
     <EntitySet Name="IN_Location" EntityType="InventoryDBModel.IN_Location" />
     <EntitySet Name="IN_Sites" EntityType="InventoryDBModel.IN_Sites" />
     <EntitySet Name="IN_Requisition" EntityType="InventoryDBModel.IN_Requisition" />
+    <EntitySet Name="IN_Package" EntityType="InventoryDBModel.IN_Package" />
   </EntityContainer>
   <EntityType Name="IN_StockCard">
     <Key>
@@ -146,5 +147,16 @@
     <Property Name="UserID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="RequisStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IN_Package">
+    <Key>
+      <PropertyRef Name="PackageID" />
+    </Key>
+    <Property Name="PackageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PackProductID" Type="Int32" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>
