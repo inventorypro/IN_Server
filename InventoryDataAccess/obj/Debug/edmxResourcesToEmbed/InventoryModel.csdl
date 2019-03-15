@@ -69,6 +69,9 @@
     <EntitySet Name="IN_Sites" EntityType="InventoryDBModel.IN_Sites" />
     <EntitySet Name="IN_Requisition" EntityType="InventoryDBModel.IN_Requisition" />
     <EntitySet Name="IN_Package" EntityType="InventoryDBModel.IN_Package" />
+    <EntitySet Name="IN_ProductLocation" EntityType="InventoryDBModel.IN_ProductLocation" />
+    <EntitySet Name="Tables" EntityType="InventoryDBModel.Table" />
+    <EntitySet Name="V_RequisitionPACK" EntityType="InventoryDBModel.V_RequisitionPACK" />
   </EntityContainer>
   <EntityType Name="IN_StockCard">
     <Key>
@@ -158,5 +161,50 @@
     <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PackProductID" Type="Int32" />
     <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IN_ProductLocation">
+    <Key>
+      <PropertyRef Name="ProductLocationID" />
+    </Key>
+    <Property Name="ProductLocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationID" Type="Int32" />
+    <Property Name="LocationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="UnitType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MinValue" Type="Int32" />
+    <Property Name="MaxValue" Type="Int32" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="ProductStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImgProduct" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Place" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Vender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_RequisitionPACK">
+    <Key>
+      <PropertyRef Name="RequisID" />
+      <PropertyRef Name="IndexViewPACKAGE" />
+    </Key>
+    <Property Name="RequisID" Type="Int32" Nullable="false" />
+    <Property Name="RequisNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="RequisStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="ItemAmount" Type="Int32" />
+    <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RequisAmount" Type="Int32" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IndexViewPACKAGE" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

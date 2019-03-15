@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fb6e13edd878426d8206cfc0b40c0a5c" Name="Diagram1">
+      <Diagram DiagramId="fb6e13edd878426d8206cfc0b40c0a5c" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="InventoryDBModel.IN_Category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="InventoryDBModel.IN_Product" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="InventoryDBModel.IN_UnitType" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
@@ -16,6 +16,8 @@
         <EntityTypeShape EntityType="InventoryDBModel.IN_Sites" Width="1.5" PointX="7.375" PointY="3.75" />
         <EntityTypeShape EntityType="InventoryDBModel.IN_Requisition" Width="1.5" PointX="7.375" PointY="6.75" />
         <EntityTypeShape EntityType="InventoryDBModel.IN_Package" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryDBModel.IN_ProductLocation" Width="1.5" PointX="0.875" PointY="8.75" />
+        <EntityTypeShape EntityType="InventoryDBModel.V_RequisitionPACK" Width="1.5" PointX="9.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

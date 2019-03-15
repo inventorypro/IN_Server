@@ -158,5 +158,52 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="IN_ProductLocation">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_ProductLocation">
+        <MappingFragment StoreEntitySet="IN_ProductLocation">
+          <ScalarProperty Name="Vender" ColumnName="Vender" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="SITES" ColumnName="SITES" />
+          <ScalarProperty Name="ImgProduct" ColumnName="ImgProduct" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="MaxValue" ColumnName="MaxValue" />
+          <ScalarProperty Name="MinValue" ColumnName="MinValue" />
+          <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="ProductLocationID" ColumnName="ProductLocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="InventoryDBModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_RequisitionPACK">
+      <EntityTypeMapping TypeName="InventoryDBModel.V_RequisitionPACK">
+        <MappingFragment StoreEntitySet="V_RequisitionPACK">
+          <ScalarProperty Name="IndexViewPACKAGE" ColumnName="IndexViewPACKAGE" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="RequisAmount" ColumnName="RequisAmount" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ItemAmount" ColumnName="ItemAmount" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="RequisStatus" ColumnName="RequisStatus" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="RequisNumber" ColumnName="RequisNumber" />
+          <ScalarProperty Name="RequisID" ColumnName="RequisID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

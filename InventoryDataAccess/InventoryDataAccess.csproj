@@ -107,6 +107,9 @@
     <Compile Include="IN_Product.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="IN_ProductLocation.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="IN_ProductRequis.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>
@@ -123,10 +126,16 @@
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserLogin.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UserPermission.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_RequisitionPACK.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

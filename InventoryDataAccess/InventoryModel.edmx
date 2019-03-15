@@ -52,6 +52,28 @@
           <Property Name="SITES" Type="nvarchar(max)" />
           <Property Name="Place" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="IN_ProductLocation">
+          <Key>
+            <PropertyRef Name="ProductLocationID" />
+          </Key>
+          <Property Name="ProductLocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LocationID" Type="int" />
+          <Property Name="LocationName" Type="nvarchar(max)" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Barcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+          <Property Name="Category" Type="nvarchar(max)" />
+          <Property Name="Price" Type="int" />
+          <Property Name="UnitType" Type="nvarchar" MaxLength="50" />
+          <Property Name="MinValue" Type="int" />
+          <Property Name="MaxValue" Type="int" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="ProductStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImgProduct" Type="nvarchar(max)" />
+          <Property Name="SITES" Type="nvarchar(max)" />
+          <Property Name="Place" Type="nvarchar(max)" />
+          <Property Name="Vender" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="IN_ProductRequis">
           <Key>
             <PropertyRef Name="RequisID" />
@@ -128,6 +150,13 @@
           <Property Name="UnitTypeName" Type="nvarchar(max)" />
           <Property Name="UnitValue" Type="int" />
         </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="img" Type="image" />
+        </EntityType>
         <EntityType Name="UserLogin">
           <Key>
             <PropertyRef Name="ESSUSR_Name" />
@@ -151,18 +180,52 @@
           <Property Name="Permission" Type="nvarchar(max)" />
           <Property Name="Department" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTORYDATAACCESS\INVENTORYDB.MDF.dbo.V_RequisitionPACK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_RequisitionPACK">
+          <Key>
+            <PropertyRef Name="IndexViewPACKAGE" />
+            <PropertyRef Name="RequisID" />
+          </Key>
+          <Property Name="IndexViewPACKAGE" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="RequisID" Type="int" Nullable="false" />
+          <Property Name="RequisNumber" Type="nvarchar(max)" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="RequisStatus" Type="nvarchar(max)" />
+          <Property Name="Category" Type="nvarchar(max)" />
+          <Property Name="RequisAmount" Type="int" />
+          <Property Name="ItemID" Type="int" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+          <Property Name="ItemAmount" Type="int" />
+        </EntityType>
         <EntityContainer Name="InventoryDBModelStoreContainer">
           <EntitySet Name="IN_Category" EntityType="Self.IN_Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Location" EntityType="Self.IN_Location" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Package" EntityType="Self.IN_Package" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Product" EntityType="Self.IN_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IN_ProductLocation" EntityType="Self.IN_ProductLocation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_ProductRequis" EntityType="Self.IN_ProductRequis" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Requisition" EntityType="Self.IN_Requisition" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Sites" EntityType="Self.IN_Sites" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_StockCard" EntityType="Self.IN_StockCard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_UnitType" EntityType="Self.IN_UnitType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserPermission" EntityType="Self.UserPermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_RequisitionPACK" EntityType="Self.V_RequisitionPACK" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_RequisitionPACK].[IndexViewPACKAGE] AS [IndexViewPACKAGE], 
+    [V_RequisitionPACK].[RequisID] AS [RequisID], 
+    [V_RequisitionPACK].[RequisNumber] AS [RequisNumber], 
+    [V_RequisitionPACK].[ProductID] AS [ProductID], 
+    [V_RequisitionPACK].[RequisStatus] AS [RequisStatus], 
+    [V_RequisitionPACK].[Category] AS [Category], 
+    [V_RequisitionPACK].[RequisAmount] AS [RequisAmount], 
+    [V_RequisitionPACK].[ItemID] AS [ItemID], 
+    [V_RequisitionPACK].[ProductName] AS [ProductName], 
+    [V_RequisitionPACK].[ItemAmount] AS [ItemAmount]
+    FROM [dbo].[V_RequisitionPACK] AS [V_RequisitionPACK]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -237,6 +300,9 @@
           <EntitySet Name="IN_Sites" EntityType="InventoryDBModel.IN_Sites" />
           <EntitySet Name="IN_Requisition" EntityType="InventoryDBModel.IN_Requisition" />
           <EntitySet Name="IN_Package" EntityType="InventoryDBModel.IN_Package" />
+          <EntitySet Name="IN_ProductLocation" EntityType="InventoryDBModel.IN_ProductLocation" />
+          <EntitySet Name="Tables" EntityType="InventoryDBModel.Table" />
+          <EntitySet Name="V_RequisitionPACK" EntityType="InventoryDBModel.V_RequisitionPACK" />
         </EntityContainer>
         <EntityType Name="IN_StockCard">
           <Key>
@@ -326,6 +392,51 @@
           <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PackProductID" Type="Int32" />
           <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IN_ProductLocation">
+          <Key>
+            <PropertyRef Name="ProductLocationID" />
+          </Key>
+          <Property Name="ProductLocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LocationID" Type="Int32" />
+          <Property Name="LocationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="UnitType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MinValue" Type="Int32" />
+          <Property Name="MaxValue" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="ProductStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImgProduct" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Place" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Vender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="img" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="V_RequisitionPACK">
+          <Key>
+            <PropertyRef Name="RequisID" />
+            <PropertyRef Name="IndexViewPACKAGE" />
+          </Key>
+          <Property Name="RequisID" Type="Int32" Nullable="false" />
+          <Property Name="RequisNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="RequisStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemID" Type="Int32" />
+          <Property Name="ItemAmount" Type="Int32" />
+          <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RequisAmount" Type="Int32" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IndexViewPACKAGE" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -490,6 +601,53 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="IN_ProductLocation">
+            <EntityTypeMapping TypeName="InventoryDBModel.IN_ProductLocation">
+              <MappingFragment StoreEntitySet="IN_ProductLocation">
+                <ScalarProperty Name="Vender" ColumnName="Vender" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="SITES" ColumnName="SITES" />
+                <ScalarProperty Name="ImgProduct" ColumnName="ImgProduct" />
+                <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="MaxValue" ColumnName="MaxValue" />
+                <ScalarProperty Name="MinValue" ColumnName="MinValue" />
+                <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="ProductLocationID" ColumnName="ProductLocationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="InventoryDBModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_RequisitionPACK">
+            <EntityTypeMapping TypeName="InventoryDBModel.V_RequisitionPACK">
+              <MappingFragment StoreEntitySet="V_RequisitionPACK">
+                <ScalarProperty Name="IndexViewPACKAGE" ColumnName="IndexViewPACKAGE" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="RequisAmount" ColumnName="RequisAmount" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ItemAmount" ColumnName="ItemAmount" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="RequisStatus" ColumnName="RequisStatus" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="RequisNumber" ColumnName="RequisNumber" />
+                <ScalarProperty Name="RequisID" ColumnName="RequisID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -504,8 +662,8 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

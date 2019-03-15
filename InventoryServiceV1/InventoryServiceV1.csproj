@@ -52,6 +52,7 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
@@ -226,6 +227,8 @@
     <Compile Include="Controllers\IN_PackageController.cs" />
     <Compile Include="Controllers\IN_ProductController.cs" />
     <Compile Include="Controllers\IN_ProductInPackageController.cs" />
+    <Compile Include="Controllers\IN_ProductLocationController.cs" />
+    <Compile Include="Controllers\IN_ProductLocationViewPDController.cs" />
     <Compile Include="Controllers\IN_ProductRequisController.cs" />
     <Compile Include="Controllers\IN_ProductViewBarcodeController.cs" />
     <Compile Include="Controllers\IN_RequisitionController.cs" />
@@ -234,6 +237,7 @@
     <Compile Include="Controllers\IN_UnitTypeController.cs" />
     <Compile Include="Controllers\UserPermissionController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\V_RequisitionPACKController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -342,6 +346,9 @@
       <Project>{9cf63251-f76b-45e9-8afc-70a167f8a2a3}</Project>
       <Name>InventoryDataAccess</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
