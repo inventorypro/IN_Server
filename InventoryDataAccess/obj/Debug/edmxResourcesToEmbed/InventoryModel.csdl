@@ -72,6 +72,7 @@
     <EntitySet Name="IN_ProductLocation" EntityType="InventoryDBModel.IN_ProductLocation" />
     <EntitySet Name="Tables" EntityType="InventoryDBModel.Table" />
     <EntitySet Name="V_RequisitionPACK" EntityType="InventoryDBModel.V_RequisitionPACK" />
+    <EntitySet Name="IN_Receiver" EntityType="InventoryDBModel.IN_Receiver" />
   </EntityContainer>
   <EntityType Name="IN_StockCard">
     <Key>
@@ -150,6 +151,8 @@
     <Property Name="UserID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="RequisStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Signature" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SignatureDate" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="IN_Package">
     <Key>
@@ -206,5 +209,27 @@
     <Property Name="RequisAmount" Type="Int32" />
     <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="IndexViewPACKAGE" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IN_Receiver">
+    <Key>
+      <PropertyRef Name="ReceiverID" />
+    </Key>
+    <Property Name="ReceiverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="ReqAmount" Type="Int32" />
+    <Property Name="ReqTime" Type="DateTime" Precision="3" />
+    <Property Name="ESSUSR_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EMP_EngName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiverSignature" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiverESSUSR_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ReceiverEMP_EngName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiverTime" Type="DateTime" Precision="3" />
+    <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LocationProductID" Type="Int32" />
   </EntityType>
 </Schema>

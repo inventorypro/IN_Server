@@ -1,0 +1,207 @@
+CREATE TABLE [dbo].[IN_Category] (
+    [CategoryID]   INT            IDENTITY (1, 1) NOT NULL,
+    [CategoryName] NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([CategoryID] ASC)
+);
+
+
+CREATE TABLE [dbo].[IN_Location] (
+    [LocationID]   INT            IDENTITY (1, 1) NOT NULL,
+    [LocationName] NVARCHAR (MAX) NULL,
+    [ImgLocation]  NVARCHAR (MAX) NULL,
+    [SITESID]      INT            NULL,
+    [SITES]        NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([LocationID] ASC)
+);
+
+CREATE TABLE [dbo].[IN_Package] (
+    [PackageID]     INT            IDENTITY (1, 1) NOT NULL,
+    [ProductID]     INT            NULL,
+    [PackProductID] INT            NULL,
+    [Amount]        INT            NULL,
+    [SITES]         NVARCHAR (MAX) NULL,
+    [ProductName]   NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([PackageID] ASC)
+);
+
+CREATE TABLE [dbo].[IN_Product] (
+    [ProductID]     INT            IDENTITY (1, 1) NOT NULL,
+    [Barcode]       NVARCHAR (50)  NULL,
+    [ProductName]   NVARCHAR (MAX) NULL,
+    [Category]      NVARCHAR (MAX) NULL,
+    [Price]         INT            NULL,
+    [UnitType]      NVARCHAR (50)  NULL,
+    [MinValue]      INT            NULL,
+    [MaxValue]      INT            NULL,
+    [Amount]        INT            NULL,
+    [ProductStatus] NVARCHAR (50)  NULL,
+    [ImgProduct]    NVARCHAR (MAX) NULL,
+    [SITES]         NVARCHAR (MAX) NULL,
+    [Place]         NVARCHAR (MAX) NULL,
+    [Vender]        NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([ProductID] ASC)
+);
+
+
+CREATE TABLE [dbo].[IN_ProductLocation] (
+    [ProductLocationID] INT            IDENTITY (1, 1) NOT NULL,
+    [LocationID]        INT            NULL,
+    [LocationName]      NVARCHAR (MAX) NULL,
+    [ProductID]         INT            NULL,
+    [Barcode]           NVARCHAR (50)  NULL,
+    [ProductName]       NVARCHAR (MAX) NULL,
+    [Category]          NVARCHAR (MAX) NULL,
+    [Price]             INT            NULL,
+    [UnitType]          NVARCHAR (50)  NULL,
+    [MinValue]          INT            NULL,
+    [MaxValue]          INT            NULL,
+    [Amount]            INT            NULL,
+    [ProductStatus]     NVARCHAR (50)  NULL,
+    [ImgProduct]        NVARCHAR (MAX) NULL,
+    [SITES]             NVARCHAR (MAX) NULL,
+    [Place]             NVARCHAR (MAX) NULL,
+    [Vender]            NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([ProductLocationID] ASC)
+);
+
+
+CREATE TABLE [dbo].[IN_ProductRequis] (
+    [RequisID]     INT            IDENTITY (1, 1) NOT NULL,
+    [ProductID]    INT            NULL,
+    [Barcode]      NVARCHAR (50)  NULL,
+    [UserID]       NVARCHAR (MAX) NULL,
+    [EMP_EngName]  NVARCHAR (MAX) NULL,
+    [Position]     NVARCHAR (MAX) NULL,
+    [ProductName]  NVARCHAR (MAX) NULL,
+    [Category]     NVARCHAR (MAX) NULL,
+    [Price]        INT            NULL,
+    [UnitType]     NVARCHAR (MAX) NULL,
+    [ImgProduct]   NVARCHAR (MAX) NULL,
+    [Balance]      INT            NULL,
+    [RequisAmount] INT            NULL,
+    [RequisNote]   NVARCHAR (MAX) NULL,
+    [Location]     NVARCHAR (MAX) NULL,
+    [RequisStatus] NVARCHAR (MAX) NULL,
+    [RequisNumber] NVARCHAR (MAX) NULL,
+    [Date]         DATETIME       NULL,
+    PRIMARY KEY CLUSTERED ([RequisID] ASC)
+);
+
+
+CREATE TABLE [dbo].[IN_Receiver] (
+    [ReceiverID]          INT            IDENTITY (1, 1) NOT NULL,
+    [LocationID]          INT            NULL,
+    [ProductID]           INT            NULL,
+    [ProductName]         NVARCHAR (MAX) NULL,
+    [Price]               INT            NULL,
+    [Total]               INT            NULL,
+    [ReqAmount]           INT            NULL,
+    [ReqTime]             DATETIME       NULL,
+    [ESSUSR_Name]         NVARCHAR (10)  NULL,
+    [EMP_EngName]         NVARCHAR (MAX) NULL,
+    [ReceiverSignature]   NVARCHAR (MAX) NULL,
+    [ReceiverESSUSR_Name] NCHAR (10)     NULL,
+    [ReceiverEMP_EngName] NVARCHAR (MAX) NULL,
+    [ReceiverTime]        DATETIME       NULL,
+    [SITES]               NVARCHAR (MAX) NULL,
+    [Status]              NVARCHAR (MAX) NULL,
+    [LocationProductID]   INT            NULL,
+    PRIMARY KEY CLUSTERED ([ReceiverID] ASC)
+);
+
+
+CREATE TABLE [dbo].[IN_Requisition] (
+    [RequisID]       INT            IDENTITY (1, 1) NOT NULL,
+    [UserID]         NVARCHAR (MAX) NULL,
+    [RequisName]     NVARCHAR (MAX) NULL,
+    [RequisPosition] NVARCHAR (MAX) NULL,
+    [RequisDept]     NVARCHAR (MAX) NULL,
+    [RequisLocation] NVARCHAR (MAX) NULL,
+    [RequisNote]     NVARCHAR (MAX) NULL,
+    [RequisDate]     DATETIME       NULL,
+    [RequisStatus]   NVARCHAR (MAX) NULL,
+    [ApproveID]      NVARCHAR (MAX) NULL,
+    [ApproveName]    NVARCHAR (MAX) NULL,
+    [ApproveDate]    DATETIME       NULL,
+    [RequisNumber]   NVARCHAR (MAX) NULL,
+    [TotalCost]      INT            NULL,
+    [SITES]          NVARCHAR (MAX) NULL,
+    [Signature]      NVARCHAR (MAX) NULL,
+    [SignatureDate]  DATETIME       NULL,
+    PRIMARY KEY CLUSTERED ([RequisID] ASC)
+);
+
+
+CREATE TABLE [dbo].[IN_Sites] (
+    [SITESID]  INT            IDENTITY (1, 1) NOT NULL,
+    [SITES]    NVARCHAR (MAX) NULL,
+    [ImgSITES] NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([SITESID] ASC)
+);
+
+CREATE TABLE [dbo].[IN_StockCard] (
+    [StockCardID]       INT            IDENTITY (1, 1) NOT NULL,
+    [Date]              DATETIME       NULL,
+    [UserID]            NVARCHAR (MAX) NULL,
+    [StockCardCategory] NVARCHAR (MAX) NULL,
+    [ProductID]         INT            NULL,
+    [Amount]            INT            NULL,
+    [Balance]           INT            NULL,
+    [ProductName]       NVARCHAR (MAX) NULL,
+    [Price]             INT            NULL,
+    [UnitType]          NVARCHAR (MAX) NULL,
+    [Category]          NVARCHAR (MAX) NULL,
+    [SITES]             NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([StockCardID] ASC)
+);
+
+
+CREATE TABLE [dbo].[IN_UnitType] (
+    [UnitTypeID]   INT            IDENTITY (1, 1) NOT NULL,
+    [UnitTypeName] NVARCHAR (MAX) NULL,
+    [UnitValue]    INT            NULL,
+    PRIMARY KEY CLUSTERED ([UnitTypeID] ASC)
+);
+
+CREATE TABLE [dbo].[Table] (
+    [RequisID] INT   IDENTITY (1, 1) NOT NULL,
+    [img]      IMAGE NULL,
+    PRIMARY KEY CLUSTERED ([RequisID] ASC)
+);
+
+
+CREATE TABLE [dbo].[UserLogin] (
+    [ESSUSR_Name]     NVARCHAR (10)  NOT NULL,
+    [ESSURS_Password] NVARCHAR (10)  NULL,
+    [EMP_EngName]     NVARCHAR (MAX) NULL,
+    [EMP_Email]       NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([ESSUSR_Name] ASC)
+);
+
+
+CREATE TABLE [dbo].[UserPermission] (
+    [ESSUSR_Name] NVARCHAR (10)  NOT NULL,
+    [EMP_EngName] NVARCHAR (MAX) NULL,
+    [EMP_Email]   NVARCHAR (MAX) NULL,
+    [Location]    NVARCHAR (MAX) NULL,
+    [Position]    NVARCHAR (MAX) NULL,
+    [SITES]       NVARCHAR (MAX) NULL,
+    [Status]      NVARCHAR (MAX) NULL,
+    [Permission]  NVARCHAR (MAX) NULL,
+    [Department]  NVARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([ESSUSR_Name] ASC)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+

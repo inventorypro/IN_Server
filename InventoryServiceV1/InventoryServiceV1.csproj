@@ -231,6 +231,9 @@
     <Compile Include="Controllers\IN_ProductLocationViewPDController.cs" />
     <Compile Include="Controllers\IN_ProductRequisController.cs" />
     <Compile Include="Controllers\IN_ProductViewBarcodeController.cs" />
+    <Compile Include="Controllers\IN_ReceiverController.cs" />
+    <Compile Include="Controllers\IN_ReceiverLocationIDController.cs" />
+    <Compile Include="Controllers\IN_ReceiverViewProductIDController.cs" />
     <Compile Include="Controllers\IN_RequisitionController.cs" />
     <Compile Include="Controllers\IN_SitesController.cs" />
     <Compile Include="Controllers\IN_StockCardController.cs" />

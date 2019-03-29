@@ -29,5 +29,7 @@ namespace InventoryDataAccess
         public string UserID { get; set; }
         public string SITES { get; set; }
         public string RequisStatus { get; set; }
+        public string Signature { get; set; }
+        public Nullable<System.DateTime> SignatureDate { get; set; }
     }
 }

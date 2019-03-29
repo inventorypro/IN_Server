@@ -128,6 +128,8 @@
     <EntitySetMapping Name="IN_Requisition">
       <EntityTypeMapping TypeName="InventoryDBModel.IN_Requisition">
         <MappingFragment StoreEntitySet="IN_Requisition">
+          <ScalarProperty Name="SignatureDate" ColumnName="SignatureDate" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
           <ScalarProperty Name="RequisStatus" ColumnName="RequisStatus" />
           <ScalarProperty Name="SITES" ColumnName="SITES" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -202,6 +204,29 @@
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="RequisNumber" ColumnName="RequisNumber" />
           <ScalarProperty Name="RequisID" ColumnName="RequisID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IN_Receiver">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_Receiver">
+        <MappingFragment StoreEntitySet="IN_Receiver">
+          <ScalarProperty Name="LocationProductID" ColumnName="LocationProductID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SITES" ColumnName="SITES" />
+          <ScalarProperty Name="ReceiverTime" ColumnName="ReceiverTime" />
+          <ScalarProperty Name="ReceiverEMP_EngName" ColumnName="ReceiverEMP_EngName" />
+          <ScalarProperty Name="ReceiverESSUSR_Name" ColumnName="ReceiverESSUSR_Name" />
+          <ScalarProperty Name="ReceiverSignature" ColumnName="ReceiverSignature" />
+          <ScalarProperty Name="EMP_EngName" ColumnName="EMP_EngName" />
+          <ScalarProperty Name="ESSUSR_Name" ColumnName="ESSUSR_Name" />
+          <ScalarProperty Name="ReqTime" ColumnName="ReqTime" />
+          <ScalarProperty Name="ReqAmount" ColumnName="ReqAmount" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="ReceiverID" ColumnName="ReceiverID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
