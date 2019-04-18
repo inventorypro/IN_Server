@@ -118,6 +118,7 @@
           <Property Name="SITES" Type="nvarchar(max)" />
           <Property Name="Status" Type="nvarchar(max)" />
           <Property Name="LocationProductID" Type="int" />
+          <Property Name="Category" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="IN_Requisition">
           <Key>
@@ -165,6 +166,7 @@
           <Property Name="UnitType" Type="nvarchar(max)" />
           <Property Name="Category" Type="nvarchar(max)" />
           <Property Name="SITES" Type="nvarchar(max)" />
+          <Property Name="Comment" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="IN_UnitType">
           <Key>
@@ -346,6 +348,7 @@ warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTO
           <Property Name="UnitType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="IN_ProductRequis">
           <Key>
@@ -487,6 +490,7 @@ warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTO
           <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LocationProductID" Type="Int32" />
+          <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -559,6 +563,7 @@ warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTO
           <EntitySetMapping Name="IN_StockCard">
             <EntityTypeMapping TypeName="InventoryDBModel.IN_StockCard">
               <MappingFragment StoreEntitySet="IN_StockCard">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="SITES" ColumnName="SITES" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="UnitType" ColumnName="UnitType" />
@@ -703,6 +708,7 @@ warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTO
           <EntitySetMapping Name="IN_Receiver">
             <EntityTypeMapping TypeName="InventoryDBModel.IN_Receiver">
               <MappingFragment StoreEntitySet="IN_Receiver">
+                <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="LocationProductID" ColumnName="LocationProductID" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="SITES" ColumnName="SITES" />

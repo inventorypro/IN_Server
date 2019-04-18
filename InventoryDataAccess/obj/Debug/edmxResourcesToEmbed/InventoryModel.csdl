@@ -90,6 +90,7 @@
     <Property Name="UnitType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="IN_ProductRequis">
     <Key>
@@ -231,5 +232,6 @@
     <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="LocationProductID" Type="Int32" />
+    <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

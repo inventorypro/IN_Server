@@ -31,5 +31,6 @@ namespace InventoryDataAccess
         public string SITES { get; set; }
         public string Status { get; set; }
         public Nullable<int> LocationProductID { get; set; }
+        public string Category { get; set; }
     }
 }

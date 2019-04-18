@@ -26,5 +26,6 @@ namespace InventoryDataAccess
         public string UnitType { get; set; }
         public string Category { get; set; }
         public string SITES { get; set; }
+        public string Comment { get; set; }
     }
 }

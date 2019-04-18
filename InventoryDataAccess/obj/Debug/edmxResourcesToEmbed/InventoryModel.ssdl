@@ -113,6 +113,7 @@
     <Property Name="SITES" Type="nvarchar(max)" />
     <Property Name="Status" Type="nvarchar(max)" />
     <Property Name="LocationProductID" Type="int" />
+    <Property Name="Category" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="IN_Requisition">
     <Key>
@@ -160,6 +161,7 @@
     <Property Name="UnitType" Type="nvarchar(max)" />
     <Property Name="Category" Type="nvarchar(max)" />
     <Property Name="SITES" Type="nvarchar(max)" />
+    <Property Name="Comment" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="IN_UnitType">
     <Key>

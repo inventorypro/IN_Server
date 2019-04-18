@@ -29,13 +29,13 @@ namespace InventoryServiceV1.Controllers
 
         // GET: api/IN_ReceiverViewProductID/5
         [BasicAuthentication]
-        public HttpResponseMessage GetIN_ReceiverProductID(int id)
+        public HttpResponseMessage GetIN_ReceiverProductID(int id,int location)
         {
             string username = Thread.CurrentPrincipal.Identity.Name;
             string getUsername = username.ToLower();
 
             return Request.CreateResponse(HttpStatusCode.OK,
-         db.IN_Receiver.Where(e => e.ProductID == id && e.ESSUSR_Name == username).ToList());
+         db.IN_Receiver.Where(e => e.ProductID == id && e.ESSUSR_Name == username && e.Status == "pending" && e.LocationID == location ).ToList());
 
 
 

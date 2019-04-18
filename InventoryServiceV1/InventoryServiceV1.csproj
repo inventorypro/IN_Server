@@ -225,12 +225,14 @@
     <Compile Include="Controllers\IN_CategoryController.cs" />
     <Compile Include="Controllers\IN_LocationController.cs" />
     <Compile Include="Controllers\IN_PackageController.cs" />
+    <Compile Include="Controllers\IN_PackageViewSubProductController.cs" />
     <Compile Include="Controllers\IN_ProductController.cs" />
     <Compile Include="Controllers\IN_ProductInPackageController.cs" />
     <Compile Include="Controllers\IN_ProductLocationController.cs" />
     <Compile Include="Controllers\IN_ProductLocationViewPDController.cs" />
     <Compile Include="Controllers\IN_ProductRequisController.cs" />
     <Compile Include="Controllers\IN_ProductViewBarcodeController.cs" />
+    <Compile Include="Controllers\IN_ReceiverCheckAmountController.cs" />
     <Compile Include="Controllers\IN_ReceiverController.cs" />
     <Compile Include="Controllers\IN_ReceiverLocationIDController.cs" />
     <Compile Include="Controllers\IN_ReceiverViewProductIDController.cs" />
@@ -296,7 +298,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

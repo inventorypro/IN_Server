@@ -66,6 +66,7 @@
     <EntitySetMapping Name="IN_StockCard">
       <EntityTypeMapping TypeName="InventoryDBModel.IN_StockCard">
         <MappingFragment StoreEntitySet="IN_StockCard">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
           <ScalarProperty Name="SITES" ColumnName="SITES" />
           <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="UnitType" ColumnName="UnitType" />
@@ -210,6 +211,7 @@
     <EntitySetMapping Name="IN_Receiver">
       <EntityTypeMapping TypeName="InventoryDBModel.IN_Receiver">
         <MappingFragment StoreEntitySet="IN_Receiver">
+          <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="LocationProductID" ColumnName="LocationProductID" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="SITES" ColumnName="SITES" />
