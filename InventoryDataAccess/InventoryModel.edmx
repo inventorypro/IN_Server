@@ -168,6 +168,15 @@
           <Property Name="SITES" Type="nvarchar(max)" />
           <Property Name="Comment" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="IN_Topic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="SITES" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="IN_UnitType">
           <Key>
             <PropertyRef Name="UnitTypeID" />
@@ -235,6 +244,7 @@ warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTO
           <EntitySet Name="IN_Requisition" EntityType="Self.IN_Requisition" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_Sites" EntityType="Self.IN_Sites" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_StockCard" EntityType="Self.IN_StockCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IN_Topic" EntityType="Self.IN_Topic" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IN_UnitType" EntityType="Self.IN_UnitType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
@@ -331,6 +341,7 @@ warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTO
           <EntitySet Name="Tables" EntityType="InventoryDBModel.Table" />
           <EntitySet Name="V_RequisitionPACK" EntityType="InventoryDBModel.V_RequisitionPACK" />
           <EntitySet Name="IN_Receiver" EntityType="InventoryDBModel.IN_Receiver" />
+          <EntitySet Name="IN_Topic" EntityType="InventoryDBModel.IN_Topic" />
         </EntityContainer>
         <EntityType Name="IN_StockCard">
           <Key>
@@ -491,6 +502,15 @@ warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTO
           <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LocationProductID" Type="Int32" />
           <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IN_Topic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -726,6 +746,16 @@ warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTO
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="LocationID" ColumnName="LocationID" />
                 <ScalarProperty Name="ReceiverID" ColumnName="ReceiverID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IN_Topic">
+            <EntityTypeMapping TypeName="InventoryDBModel.IN_Topic">
+              <MappingFragment StoreEntitySet="IN_Topic">
+                <ScalarProperty Name="SITES" ColumnName="SITES" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

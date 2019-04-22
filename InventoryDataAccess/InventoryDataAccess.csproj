@@ -125,6 +125,9 @@
     <Compile Include="IN_StockCard.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="IN_Topic.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="IN_UnitType.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>

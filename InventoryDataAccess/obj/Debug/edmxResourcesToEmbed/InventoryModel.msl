@@ -232,5 +232,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="IN_Topic">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_Topic">
+        <MappingFragment StoreEntitySet="IN_Topic">
+          <ScalarProperty Name="SITES" ColumnName="SITES" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

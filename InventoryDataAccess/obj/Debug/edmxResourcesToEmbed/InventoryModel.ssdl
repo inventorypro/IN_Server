@@ -163,6 +163,15 @@
     <Property Name="SITES" Type="nvarchar(max)" />
     <Property Name="Comment" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="IN_Topic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="SITES" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="IN_UnitType">
     <Key>
       <PropertyRef Name="UnitTypeID" />
@@ -230,6 +239,7 @@ warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTO
     <EntitySet Name="IN_Requisition" EntityType="Self.IN_Requisition" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_Sites" EntityType="Self.IN_Sites" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_StockCard" EntityType="Self.IN_StockCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IN_Topic" EntityType="Self.IN_Topic" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_UnitType" EntityType="Self.IN_UnitType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />

@@ -239,6 +239,7 @@
     <Compile Include="Controllers\IN_RequisitionController.cs" />
     <Compile Include="Controllers\IN_SitesController.cs" />
     <Compile Include="Controllers\IN_StockCardController.cs" />
+    <Compile Include="Controllers\IN_TopicController.cs" />
     <Compile Include="Controllers\IN_UnitTypeController.cs" />
     <Compile Include="Controllers\UserPermissionController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />

@@ -40,5 +40,6 @@ namespace InventoryDataAccess
         public virtual DbSet<Table> Tables { get; set; }
         public virtual DbSet<V_RequisitionPACK> V_RequisitionPACK { get; set; }
         public virtual DbSet<IN_Receiver> IN_Receiver { get; set; }
+        public virtual DbSet<IN_Topic> IN_Topic { get; set; }
     }
 }

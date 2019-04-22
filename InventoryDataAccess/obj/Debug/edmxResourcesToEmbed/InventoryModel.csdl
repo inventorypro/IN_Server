@@ -73,6 +73,7 @@
     <EntitySet Name="Tables" EntityType="InventoryDBModel.Table" />
     <EntitySet Name="V_RequisitionPACK" EntityType="InventoryDBModel.V_RequisitionPACK" />
     <EntitySet Name="IN_Receiver" EntityType="InventoryDBModel.IN_Receiver" />
+    <EntitySet Name="IN_Topic" EntityType="InventoryDBModel.IN_Topic" />
   </EntityContainer>
   <EntityType Name="IN_StockCard">
     <Key>
@@ -233,5 +234,14 @@
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="LocationProductID" Type="Int32" />
     <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IN_Topic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>
