@@ -242,5 +242,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="IN_LocationHistory">
+      <EntityTypeMapping TypeName="InventoryDBModel.IN_LocationHistory">
+        <MappingFragment StoreEntitySet="IN_LocationHistory">
+          <ScalarProperty Name="SITE" ColumnName="SITE" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductLocationID" ColumnName="ProductLocationID" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

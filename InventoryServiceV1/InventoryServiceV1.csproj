@@ -224,6 +224,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IN_CategoryController.cs" />
     <Compile Include="Controllers\IN_LocationController.cs" />
+    <Compile Include="Controllers\IN_LocationHistoryController.cs" />
     <Compile Include="Controllers\IN_PackageController.cs" />
     <Compile Include="Controllers\IN_PackageViewSubProductController.cs" />
     <Compile Include="Controllers\IN_ProductController.cs" />

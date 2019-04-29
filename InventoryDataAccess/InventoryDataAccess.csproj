@@ -101,6 +101,9 @@
     <Compile Include="IN_Location.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="IN_LocationHistory.cs">
+      <DependentUpon>InventoryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="IN_Package.cs">
       <DependentUpon>InventoryModel.tt</DependentUpon>
     </Compile>

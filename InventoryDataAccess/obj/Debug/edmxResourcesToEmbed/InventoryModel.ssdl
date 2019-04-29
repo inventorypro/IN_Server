@@ -17,6 +17,21 @@
     <Property Name="SITESID" Type="int" />
     <Property Name="SITES" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="IN_LocationHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="LocationName" Type="nvarchar(max)" />
+    <Property Name="ProductLocationID" Type="int" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="Price" Type="int" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Balance" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="SITE" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="IN_Package">
     <Key>
       <PropertyRef Name="PackageID" />
@@ -231,6 +246,7 @@ warning 6002: The table/view 'C:\USERS\5830213040\SOURCE\REPOS\IN_SERVER\INVENTO
   <EntityContainer Name="InventoryDBModelStoreContainer">
     <EntitySet Name="IN_Category" EntityType="Self.IN_Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_Location" EntityType="Self.IN_Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IN_LocationHistory" EntityType="Self.IN_LocationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_Package" EntityType="Self.IN_Package" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_Product" EntityType="Self.IN_Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IN_ProductLocation" EntityType="Self.IN_ProductLocation" Schema="dbo" store:Type="Tables" />

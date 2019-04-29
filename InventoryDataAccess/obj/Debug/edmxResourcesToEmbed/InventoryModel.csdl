@@ -74,6 +74,7 @@
     <EntitySet Name="V_RequisitionPACK" EntityType="InventoryDBModel.V_RequisitionPACK" />
     <EntitySet Name="IN_Receiver" EntityType="InventoryDBModel.IN_Receiver" />
     <EntitySet Name="IN_Topic" EntityType="InventoryDBModel.IN_Topic" />
+    <EntitySet Name="IN_LocationHistory" EntityType="InventoryDBModel.IN_LocationHistory" />
   </EntityContainer>
   <EntityType Name="IN_StockCard">
     <Key>
@@ -243,5 +244,20 @@
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="SITES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IN_LocationHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LocationID" Type="Int32" />
+    <Property Name="LocationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductLocationID" Type="Int32" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Balance" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="SITE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>
